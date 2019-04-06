@@ -4,10 +4,10 @@ import './About.css'
 const About = () => {
     return (
 
-        <section className="bg-primary text-white mb-0" id="about">
+        <section className="mb-0" id="about">
         <div className="container">
-          <h2 className="text-center text-uppercase text-white">About</h2>
-          <hr className="star-light mb-5"/>
+          <h2 className="text-center text-uppercase">About</h2>
+          {/* <hr className="star-light mb-5"/> */}
           <div className="row">
             <div className="col-lg-4 ml-auto">
               <p className="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>

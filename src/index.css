@@ -184,6 +184,14 @@ section h2 {
     font-size: 1.5em;
   }
 }
+.lead{
+  font-size:1.5rem !important;
+}
+
+.b-white {
+  background-color:#fff;
+  color: #1a252f !important;
+}
 
 header.masthead {
   padding-top: calc(6rem + 72px);
@@ -237,9 +245,8 @@ header.masthead h2 {
 }
 .portfolio {
   margin-bottom: -15px;
-  background-color:#fff;
+ 
 }
-
 
 .portfolio .portfolio-item {
   position: relative;

@@ -11,9 +11,6 @@ import Register from './components/Register';
 import Meetings from './components/Meetings/Meetings';
 import CheckIn from './components/CheckIn';
 import Attendees from './components/Attendees/Attendees';
-import Details from './components/Details/Details'
-import About from './components/About/About'
-import Footer from './components/Footer/Footer'
 class App extends Component {
   constructor() {
     super();

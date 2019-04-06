@@ -1,0 +1,41 @@
+p.typed-in-1:after {
+  position: relative;
+  top: -.8em;
+  display: inline-block;
+  padding: 0 0.25em;
+  content: '1';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 2em;
+}
+
+.typed-in {
+    font-size: 2em;
+}
+
+.b-green {
+    background-color: #18BC9C;
+    color: #fff !important;
+}
+.b-green h2 {
+    color:#fff !important;
+}
+
+.b-blue {
+    background-color: #2c3e50;
+    color: #fff !important ;
+}
+.b-blue h2 {
+    color:#fff !important;
+}
+
+
+
+.b-white, .b-green {
+  
+    text-align: center;
+   
+}
+.b-white h2, .b-blue h2, .b-green h2 {
+    margin-bottom: 1em !important;
+}

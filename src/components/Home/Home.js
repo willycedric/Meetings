@@ -7,14 +7,9 @@ class Home extends Component {
   render() {
     const { user } = this.props;
 
-    const biggerLead = {
-      fontSize: 1.4 + 'em',
-      fontWeight: 200
-    };
-
     return (
       <div>
-     <header className="masthead bg-primary text-white text-center">
+     <header id="header" className="masthead bg-primary text-white text-center">
       <div className="container">
         <img className="img-fluid mb-5 d-block mx-auto" src="/img/profile.png" alt=""/>
         <h1 className="text-uppercase mb-0">Watch Artists</h1>
@@ -42,15 +37,14 @@ class Home extends Component {
                   Meetings
                 </Link>
               )}
-          {' '}
-            {/* columns */}
+          {' '}            
        </section>      
      </header>
      <Details/>
       <About/>
       <Footer/>
-      <div class="copyright py-4 text-center text-white">
-      <div class="container">
+      <div className="copyright py-4 text-center text-white">
+      <div className="container">
         <small>Copyright &copy; Your Website 2019</small>
       </div>
       </div>
