@@ -7,30 +7,34 @@ class Navigation extends Component {
     const { user, logOutUser } = this.props;
 
     return (
-      <nav className="site-nav family-sans navbar navbar-expand bg-primary navbar-dark higher">
-        <div className="container-fluid">
-          <Link to="/" className="navbar-brand">
-            <FaUsers className="mr-1" /> Meeting Log
-          </Link>
-          <div className="navbar-nav ml-auto">
+      <nav className="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+      <div className="container">
+      <Link to="/" className="navbar-brand">
+            Watch Artists
+      </Link>
+        <button className="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i className="fas fa-bars"></i>
+        </button>
+        <div className="navbar-nav ml-auto">
             {user && (
-              <Link className="nav-item nav-link" to="/meetings">
+              <Link className="nav-item nav-link py-3 px-0 px-lg-3" to="/meetings">
                 meetings
               </Link>
             )}
             {!user && (
-              <Link className="nav-item nav-link" to="/login">
+              <Link className="nav-item nav-link py-3 px-0 px-lg-3" to="/login">
                 log in
               </Link>
             )}
             {!user && (
-              <Link className="nav-item nav-link" to="/register">
+              <Link className="nav-item nav-link py-3 px-0 px-lg-3" to="/register">
                 register
               </Link>
             )}
             {user && (
               <Link
-                className="nav-item nav-link"
+                className="nav-item nav-link py-3 px-0 px-lg-3"
                 to="/login"
                 onClick={e => logOutUser(e)}
               >
@@ -38,8 +42,8 @@ class Navigation extends Component {
               </Link>
             )}
           </div>
-        </div>
-      </nav>
+      </div>
+    </nav>
     );
   }
 }

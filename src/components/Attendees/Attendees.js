@@ -44,13 +44,14 @@ class Attendees extends Component {
     });
   }
 
-  handleChange(e) {
+  handleChange = (e)=> {
     const itemName = e.target.name;
     const itemValue = e.target.value;
 
     this.setState({ [itemName]: itemValue });
   }
 
+ 
   chooseRandom() {
     const randomAttendee = Math.floor(
       Math.random() * this.state.allAttendees.length
