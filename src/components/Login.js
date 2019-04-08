@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import firebase from '../Firebase';
-import FormError from './FormError';
-import { navigate } from '@reach/router';
-
+import React, { Component } from 'react'
+import ReactModal from 'react-modal'
+import firebase from '../Firebase'
+import FormError from './FormError'
+import { navigate } from '@reach/router'
+import './Register/Register.css'
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -14,6 +15,8 @@ class Login extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleOpenModal = this.handleOpenModal.bind(this)
+    this.handleCloseModal = this.handleCloseModal.bind(this)
   }
 
   handleChange(e) {
@@ -21,6 +24,14 @@ class Login extends Component {
     const itemValue = e.target.value;
 
     this.setState({ [itemName]: itemValue });
+  }
+
+  handleOpenModal() {
+    this.setState({ showModal: true });
+  }
+
+  handleCloseModal() {
+    this.setState({ showModal: false });
   }
 
   handleSubmit(e) {
@@ -50,58 +61,70 @@ class Login extends Component {
 
   render() {
     return (
-      <form className="mt-3" onSubmit={this.handleSubmit}>
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-lg-6">
-              <div className="card bg-light">
-                <div className="card-body">
-                  <h3 className="font-weight-light mb-3">Log in</h3>
-                  <section className="form-group">
-                    {this.state.errorMessage !== null ? (
-                      <FormError
-                        theMessage={this.state.errorMessage}
-                      />
-                    ) : null}
-                    <label
-                      className="form-control-label sr-only"
-                      htmlFor="Email"
-                    >
-                      Email
+      <div>
+        <a className="btn-lg mr-2 home-button"onClick={this.handleOpenModal}>Login</a>
+        <ReactModal
+          isOpen={this.state.showModal}
+          contentLabel="onRequestClose Example"
+          onRequestClose={this.handleCloseModal}
+          shouldCloseOnOverlayClick={true}
+          className="Modal"        
+        >
+          <form className="mt-3" onSubmit={this.handleSubmit}>
+            <div className="container">
+              <div className="row justify-content-center">
+                <div className="col-lg-6">
+                  <div className="card bg-light">
+                    <div className="card-body">
+                      <h3 className="font-weight-light mb-3">Log in</h3>
+                      <section className="form-group">
+                        {this.state.errorMessage !== null ? (
+                          <FormError
+                            theMessage={this.state.errorMessage}
+                          />
+                        ) : null}
+                        <label
+                          className="form-control-label sr-only"
+                          htmlFor="Email"
+                        >
+                          Email
                     </label>
-                    <input
-                      required
-                      className="form-control"
-                      type="email"
-                      id="email"
-                      name="email"
-                      placeholder="Email"
-                      value={this.state.email}
-                      onChange={this.handleChange}
-                    />
-                  </section>
-                  <section className="form-group">
-                    <input
-                      required
-                      className="form-control"
-                      type="password"
-                      name="password"
-                      placeholder="Password"
-                      value={this.state.password}
-                      onChange={this.handleChange}
-                    />
-                  </section>
-                  <div className="form-group text-right mb-0">
-                    <button className="btn btn-primary" type="submit">
-                      Log in
+                        <input
+                          required
+                          className="form-control"
+                          type="email"
+                          id="email"
+                          name="email"
+                          placeholder="Email"
+                          value={this.state.email}
+                          onChange={this.handleChange}
+                        />
+                      </section>
+                      <section className="form-group">
+                        <input
+                          required
+                          className="form-control"
+                          type="password"
+                          name="password"
+                          placeholder="Password"
+                          value={this.state.password}
+                          onChange={this.handleChange}
+                        />
+                      </section>
+                      <div className="form-group text-right mb-0">
+                        <button className="btn btn-primary" type="submit">
+                          Log in
                     </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </form>
+          </form>
+        </ReactModal>
+      </div>
+
     );
   }
 }

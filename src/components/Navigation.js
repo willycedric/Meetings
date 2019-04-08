@@ -25,7 +25,7 @@ class Navigation extends Component {
           <i className="fas fa-bars"></i>
         </button>
         <div className="navbar-nav ml-auto">
-        { (
+        { !user && (
               <LinkTo className="nav-item nav-link py-3 px-0 px-lg-3" 
               to="what-it-is"
               smooth={true}
@@ -34,7 +34,7 @@ class Navigation extends Component {
               >
               What is it 
               </LinkTo>
-            )} { (
+            )} {!user && (
               <LinkTo className="nav-item nav-link py-3 px-0 px-lg-3" 
               to="how-it-works"
               smooth={true}
@@ -44,7 +44,7 @@ class Navigation extends Component {
                How it works 
               </LinkTo>
             )}
-            { (
+            {!user && (
               <LinkTo className="nav-item nav-link py-3 px-0 px-lg-3" 
               to="pricing"
               smooth={true}
@@ -54,7 +54,7 @@ class Navigation extends Component {
                Pricing
               </LinkTo>
             )}
-            { (
+            { !user && (
               <LinkTo className="nav-item nav-link py-3 px-0 px-lg-3" 
               to="about"
               smooth={true}

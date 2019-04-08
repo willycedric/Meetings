@@ -7,7 +7,7 @@ import Home from './components/Home/Home';
 import Welcome from './components/Welcome/Welcome';
 import Navigation from './components/Navigation';
 import Login from './components/Login';
-import Register from './components/Register';
+import Register from './components/Register/Register';
 import Meetings from './components/Meetings/Meetings';
 import CheckIn from './components/CheckIn';
 import Attendees from './components/Attendees/Attendees';
@@ -83,7 +83,7 @@ class App extends Component {
       .auth()
       .signOut()
       .then(() => {
-        navigate('/login');
+        navigate('/');
       });
   };
 

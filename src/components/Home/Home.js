@@ -3,6 +3,8 @@ import { Link } from '@reach/router';
 import Details from '../Details/Details'
 import About  from '../About/About'
 import Footer from '../Footer/Footer'
+import Register from '../Register/Register'
+import Login from './../Login'
 class Home extends Component { 
   render() {
     const { user } = this.props;
@@ -17,20 +19,13 @@ class Home extends Component {
       </div>
       <section className="login-register">
         {user == null && (
-                <span>
-                  <Link
-                    to="/register"
-                    className="btn-lg home-button mr-2"
-                  >
-                    Register
-                  </Link>
-                  <Link
-                    to="/login"
-                    className="btn-lg home-button mr-2"
-                  >
-                    Log In
-                  </Link>
-                </span>
+                
+                <div>
+                   <Register/>
+                 
+                   <Login/>
+                </div>
+                
               )}
               {user && (
                 <Link to="/meetings" className="btn-lg home-button">
