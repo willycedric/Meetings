@@ -1,0 +1,37 @@
+#register{
+    margin-top:10em !important
+}
+
+.Modal{
+    width: 100%;
+    margin: 0 auto;
+    max-width: 40em;
+   
+}
+
+.card {
+    width: 30em !important;
+    margin:0 auto;
+ 
+}
+.card-body > h3 {
+text-align: center;
+}
+
+.form-group {
+    margin-bottom: -4rem !important;
+}
+.form-group > button {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+.ReactModal__Overlay{
+   
+    background-color: rgba(60, 52, 52, 0.75) !important;
+}
+
+.section {
+    padding: 4rem !important;
+}
